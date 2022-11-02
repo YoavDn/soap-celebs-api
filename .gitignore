@@ -1,4 +1,4 @@
 .env 
+.eslintignore/
 dist/
 node_modules/
-.eslintignore/
