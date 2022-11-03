@@ -1,7 +1,8 @@
 import express from 'express'
-import { getAllCelebs } from './controller'
+import { getAllCelebs, _addCeleb } from './controller'
 const router = express.Router()
 
-router.get('selebs', getAllCelebs)
+router.get('/celebs', getAllCelebs)
+router.post('/add', _addCeleb)
 
 export default router

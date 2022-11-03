@@ -8,12 +8,12 @@ const dbUrl: string = (process.env.NODE_ENV as string) === 'production'
 
 const port = Number(process.env.PORT)
 
-interface Iconfig {
+interface IConfig {
     dbUrl: string
     port: number
 }
 
-const config: Iconfig = {
+const config: IConfig = {
     dbUrl,
     port,
 }

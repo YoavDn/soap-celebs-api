@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
-interface ISoapCeleb {
+export interface ISoapCeleb {
     name: string
-    soapType: string
+    scent: string
     imgUrl: string
     born: string
     gender: 'male' | 'female'
@@ -12,9 +12,9 @@ interface ISoapCeleb {
 const celebSchema = new Schema<ISoapCeleb>({
     name: { type: String },
     imgUrl: { type: String },
-    soapType: { type: String },
+    scent: { type: String },
     born: { type: String },
     gender: { type: String }
 });
 
-export const Celebs = model<ISoapCeleb>('SoapCeleb', celebSchema)
+export const SoapCeleb = model<ISoapCeleb>('SoapCeleb', celebSchema)
