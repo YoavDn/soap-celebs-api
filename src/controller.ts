@@ -11,6 +11,15 @@ export async function getAllCelebs(req: Request, res: Response) {
     }
 }
 
+export async function getRandomCeleb(req: Request, res: Response) {
+    try {
+        const randomCeleb = await soapCelebsService.getRandom()
+        return res.send(randomCeleb)
+    } catch (err) {
+        return console.log(err)
+    }
+}
+
 export async function _addCeleb(req: Request, res: Response) {
     try {
 

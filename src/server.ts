@@ -16,9 +16,7 @@ mongoose.connect(config.dbUrl)
     .then(() => console.log('connected to mongo'))
     .catch((err) => console.log('failed to connect'))
 
-app.get('/', (req: Request, res: Response) => {
-    res.send(`<h1>shit fuck shit shit</h1>`)
-})
+
 
 import routes from './routes'
 app.use('/api/', routes)

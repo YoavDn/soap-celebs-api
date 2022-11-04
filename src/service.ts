@@ -1,8 +1,19 @@
 import { SoapCeleb } from './models/celeb.model'
 import type { ISoapCeleb } from './models/celeb.model'
+
+
 async function getAll() {
     try {
         const res = await SoapCeleb.find()
+        return res
+    } catch (err) {
+        return console.log(err)
+    }
+}
+
+async function getRandom() {
+    try {
+        const res = await SoapCeleb.aggregate([{ $sample: { size: 1 } }])
         return res
     } catch (err) {
         return console.log(err)
@@ -31,6 +42,7 @@ async function addSoapCeleb(celebBody: ISoapCeleb) {
 }
 
 export const soapCelebsService = {
+    getRandom,
     addSoapCeleb,
     getAll,
 }
