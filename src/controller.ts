@@ -1,10 +1,10 @@
-import { Request, Response, NextFunction } from 'express'
+import { Request, Response } from 'express'
 import { soapCelebsService } from './service'
 
 
-export async function getAllCelebs(req: Request, res: Response) {
+export async function queryCelebs(req: Request, res: Response) {
     try {
-        const celebs = await soapCelebsService.getAll()
+        const celebs = await soapCelebsService.queryCelebs(req.query)
         return res.send(celebs)
     } catch (err) {
         return console.log(err)

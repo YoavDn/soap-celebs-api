@@ -1,8 +1,8 @@
 import express from 'express'
-import { getAllCelebs, getRandomCeleb, _addCeleb } from './controller'
+import { queryCelebs, getRandomCeleb, _addCeleb } from './controller'
 const router = express.Router()
 
-router.get('/celebs', getAllCelebs)
+router.get('/celebs', queryCelebs)
 router.get('/celebs/random', getRandomCeleb)
 router.post('/add', _addCeleb)
 
