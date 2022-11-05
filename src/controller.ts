@@ -20,6 +20,25 @@ export async function getRandomCeleb(req: Request, res: Response) {
     }
 }
 
+export async function queryMaleCelebs(req: Request, res: Response) {
+    try {
+        const celebs = await soapCelebsService.queryMaleCelebs(req.query)
+
+        return res.send(celebs)
+    } catch (err) {
+        return console.log(err)
+    }
+}
+
+export async function queryFemaleCelebs(req: Request, res: Response) {
+    try {
+        const celebs = await soapCelebsService.queryFemaleCelebs(req.query)
+        return res.send(celebs)
+    } catch (err) {
+        return console.log(err)
+    }
+}
+
 export async function _addCeleb(req: Request, res: Response) {
     try {
 

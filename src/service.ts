@@ -8,24 +8,49 @@ interface IQuery {
 
 async function queryCelebs(query: IQuery) {
     try {
-        let res: any
-        const { name, limit } = query
 
-        if (name && limit) {
-            res = await SoapCeleb.find({ name: { $regex: name?.replace('-', ' '), $options: 'i' } }).limit(Number(limit))
-        } else if (!name && limit) {
-            res = await SoapCeleb.find().limit(Number(limit))
-        } else if (name && !limit) {
-            res = await SoapCeleb.find({ name: { $regex: name?.replace('-', ' '), $options: 'i' } })
+        const { name, limit } = query
+        if (name) {
+            return limit
+                ? await SoapCeleb.find({ name: { $regex: name?.replace('-', ' '), $options: 'i' } }).limit(Number(limit))
+                : await SoapCeleb.find({ name: { $regex: name?.replace('-', ' '), $options: 'i' } })
         } else {
-            res = await SoapCeleb.find()
+            return limit
+                ? await SoapCeleb.find().limit(Number(limit))
+                : await SoapCeleb.find()
         }
+
+    } catch (err) {
+        return console.log(err)
+    }
+}
+
+async function queryMaleCelebs(query: IQuery) {
+    try {
+        const { limit } = query
+        const res = limit
+            ? await SoapCeleb.find({ gender: 'male' }).limit(Number(limit))
+            : await SoapCeleb.find({ gender: 'male' })
         return res
 
     } catch (err) {
         return console.log(err)
     }
 }
+
+async function queryFemaleCelebs(query: IQuery) {
+    try {
+        const { limit } = query
+        const res = limit
+            ? await SoapCeleb.find({ gender: 'female' }).limit(Number(limit))
+            : await SoapCeleb.find({ gender: 'female' })
+        return res
+
+    } catch (err) {
+        return console.log(err)
+    }
+}
+
 
 async function getRandom() {
     try {
@@ -62,4 +87,6 @@ export const soapCelebsService = {
     getRandom,
     addSoapCeleb,
     queryCelebs,
+    queryMaleCelebs,
+    queryFemaleCelebs
 }
