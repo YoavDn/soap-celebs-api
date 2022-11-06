@@ -13,7 +13,7 @@ export async function queryCelebs(req: Request, res: Response) {
 
 export async function getRandomCeleb(req: Request, res: Response) {
     try {
-        const randomCeleb = await soapCelebsService.getRandom()
+        const randomCeleb = await soapCelebsService.getRandom(req.query)
         return res.send(randomCeleb)
     } catch (err) {
         return console.log(err)

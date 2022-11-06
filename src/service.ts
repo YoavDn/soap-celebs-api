@@ -3,12 +3,12 @@ import type { ISoapCeleb } from './models/celeb.model'
 
 interface IQuery {
     name?: string,
-    limit?: number
+    limit?: number,
+    gender?: 'male' | 'female'
 }
 
 async function queryCelebs(query: IQuery) {
     try {
-
         const { name, limit } = query
         if (name) {
             return limit
@@ -52,11 +52,16 @@ async function queryFemaleCelebs(query: IQuery) {
 }
 
 
-async function getRandom() {
+async function getRandom(query: IQuery) {
     try {
-        const res = await SoapCeleb.aggregate([{ $sample: { size: 1 } }])
-        console.log(res)
-        return res
+        return query.gender
+            ? await SoapCeleb.aggregate(
+                [
+                    { $match: { gender: query.gender } },
+                    { $sample: { size: Number(query.limit) || 1 } }
+                ])
+            : await SoapCeleb.aggregate(
+                [{ $sample: { size: Number(query.limit) || 1 } }])
     } catch (err) {
         return console.log(err)
     }
@@ -64,16 +69,12 @@ async function getRandom() {
 
 async function addSoapCeleb(celebBody: ISoapCeleb) {
     try {
-
-        console.log(celebBody.born)
         const newSoapCeleb = new SoapCeleb({
             name: celebBody.name,
             gender: celebBody.gender,
             scent: celebBody.scent,
             imgUrl: celebBody.imgUrl,
-            born: celebBody.born
         })
-
         return newSoapCeleb.save()
             .then(() => newSoapCeleb)
             .catch((err) => err)
