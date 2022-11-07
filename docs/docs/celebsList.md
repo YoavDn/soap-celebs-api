@@ -4,22 +4,45 @@
 
 <script setup>
     import { ref } from 'vue'
-    const celebName = ref('Morgan-Freeman')
-    const randomSoapCeleb = ref(null)
+    let celebs = ref(null)
+    const currentCeleb = ref(null)
 
-    function loadRandomSoap() {
-        fetch(`http://localhost:8080/api/celebs?name=${celebName.value}`)
+    const init =  () => {
+        fetch('http://localhost:8080/api/celebs/list')
         .then((r) => r.json())
-        .then((r) => randomSoapCeleb.value = r)
+        .then((r) => {
+            celebs.value = r
+            loadSoap(r[0])
+          }
+        )
     }
-    loadRandomSoap()
+    init()
+
+    function loadSoap( name ) {
+        fetch(`http://localhost:8080/api/celebs?name=${name}`)
+        .then((r) => r.json())
+        .then((r) => currentCeleb.value = r)
+    }
+
+    function changeSoap(e) {
+        loadSoap(e.target.value)
+    }
 </script>
 
+<br>
+<div>
+<label for=selectTag>https://soap-celebs.com.api/celebs?name=</label>
+<select name="selectTag" @change="changeSoap">
+<option v-for="celeb in celebs"
+ :value='celeb'
+ >{{celeb}}</option> 
+</select>
+</div>
 
 
-<div v-if=randomSoapCeleb>
-<h2 >Name: {{randomSoapCeleb[0].name}}</h2>
-<h3> Scent: {{randomSoapCeleb[0].scent}}</h3>
-<h4 >Gender: {{randomSoapCeleb[0].gender}}</h4>
-<img :src="randomSoapCeleb[0].imgUrl"/>
+<div v-if=currentCeleb>
+<h2 >Name: {{currentCeleb[0].name}}</h2>
+<h3> Scent: {{currentCeleb[0].scent}}</h3>
+<h4 >Gender: {{currentCeleb[0].gender}}</h4>
+<img :src="currentCeleb[0].imgUrl"/>
 </div>
