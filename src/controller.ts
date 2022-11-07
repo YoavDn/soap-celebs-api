@@ -16,7 +16,8 @@ export async function getRandomCeleb(req: Request, res: Response) {
         const randomCeleb = await soapCelebsService.getRandom(req.query)
         return res.send(randomCeleb)
     } catch (err) {
-        return console.log(err)
+        res.status(400)
+        res.json(err)
     }
 }
 
@@ -26,7 +27,8 @@ export async function queryMaleCelebs(req: Request, res: Response) {
 
         return res.send(celebs)
     } catch (err) {
-        return console.log(err)
+        res.status(400)
+        res.json(err)
     }
 }
 
@@ -35,7 +37,18 @@ export async function queryFemaleCelebs(req: Request, res: Response) {
         const celebs = await soapCelebsService.queryFemaleCelebs(req.query)
         return res.send(celebs)
     } catch (err) {
-        return console.log(err)
+        res.status(400)
+        res.json(err)
+    }
+}
+
+export async function getCelebList(req: Request, res: Response) {
+    try {
+        const list = await soapCelebsService.getCelebList(req.query)
+        return res.send(list)
+    } catch (err) {
+        res.status(400)
+        res.json(err)
     }
 }
 

@@ -14,7 +14,6 @@ result
     "imgUrl": "https://res.cloudinary.com/soap-celebs/image/upload/v1667481618/ygeduphia6cqasyqxpuc.png",
     "scent": "Lavender",
     "gender": "male",
-    "__v": 0
   },
   {
     "_id": "6364e3144b9157bd6e4acb79",
@@ -22,7 +21,6 @@ result
     "imgUrl": "https://res.cloudinary.com/soap-celebs/image/upload/v1667481607/dywe2rerjvq78slsnlkm.png",
     "scent": "Bamboo and Coconut",
     "gender": "male",
-    "__v": 0
   },
   ...more
 ]

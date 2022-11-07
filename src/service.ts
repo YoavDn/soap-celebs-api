@@ -68,6 +68,19 @@ async function getRandom(query: IQuery) {
     }
 }
 
+async function getCelebList(query: IQuery) {
+    try {
+        if (!query.gender) {
+            const list = await SoapCeleb.find()
+            return list.map(({ name }) => name)
+        }
+        const listByGender = await SoapCeleb.find({ gender: query.gender })
+        return listByGender.map(({ name }) => name)
+    } catch (err) {
+        return err
+    }
+}
+
 async function addSoapCeleb(celebBody: ISoapCeleb) {
     try {
         const newSoapCeleb = new SoapCeleb({
@@ -90,5 +103,6 @@ export const soapCelebsService = {
     addSoapCeleb,
     queryCelebs,
     queryMaleCelebs,
-    queryFemaleCelebs
+    queryFemaleCelebs,
+    getCelebList
 }

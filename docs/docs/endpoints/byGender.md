@@ -13,7 +13,6 @@ for example: `https://soap-celebs.com/api/celebs/female?limit=3` will return an 
     "imgUrl": "https://res.cloudinary.com/soap-celebs/image/upload/v1667480275/ce8ae1ktn9bom7np7ylu.png",
     "scent": "Bondi Breeze",
     "gender": "female",
-    "__v": 0
   },
   {
     "_id": "6367aec7ee975ea8e0c35a6e",
@@ -21,7 +20,6 @@ for example: `https://soap-celebs.com/api/celebs/female?limit=3` will return an 
     "imgUrl": "https://res.cloudinary.com/soap-celebs/image/upload/v1667561750/kn8hegdqvufuwhl98jpn.png",
     "scent": "Luv Spell",
     "gender": "female",
-    "__v": 0
   },
   {
     "_id": "6367af27ee975ea8e0c35a71",
@@ -29,7 +27,6 @@ for example: `https://soap-celebs.com/api/celebs/female?limit=3` will return an 
     "imgUrl": "https://res.cloudinary.com/soap-celebs/image/upload/v1667561340/ujuunetoxskjvfiyscec.png",
     "scent": "Black Raspberry Vanilla",
     "gender": "female",
-    "__v": 0
   }
 ]
 

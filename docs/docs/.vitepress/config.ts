@@ -9,7 +9,7 @@ export default {
             { text: 'Support Us', link: '/supportUs' },
         ],
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/YoavDn/canvas-party' },
+            { icon: 'github', link: 'https://github.com/YoavDn/soap-celebs-api' },
             // You can also add custom icons by passing SVG as string:
             {
                 icon: {
@@ -28,11 +28,12 @@ export default {
                 ],
             },
             {
-                text: 'more',
+                text: 'More',
                 items: [
-                    { text: "List of Celebs", link: '/endpoints/celebsList' }
+                    { text: "List of Celebs", link: '/celebsList' },
+                    { text: 'Buy me Soap', link: '/supportUs' },
                 ]
-            }
+            },
         ],
         footer: {
             message: 'Made with ❤️ by YoavDn.'
