@@ -10,6 +10,7 @@ interface IQuery {
 async function queryCelebs(query: IQuery) {
     try {
         const { name, limit } = query
+
         if (name) {
             return limit
                 ? await SoapCeleb.find({ name: { $regex: name?.replace('-', ' '), $options: 'i' } }).limit(Number(limit))

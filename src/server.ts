@@ -5,7 +5,7 @@ import cors from 'cors'
 import morgan from 'morgan'
 import config from './config'
 import routes from './routes'
-import { errors } from './middlewares/errors'
+import { errors } from './middleware/errors'
 
 const app = express()
 const port = process.env.PORT || 8080

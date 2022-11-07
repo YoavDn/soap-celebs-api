@@ -1,6 +1,4 @@
 import { Request, Response, NextFunction } from 'express'
-
-
 interface Error {
     code?: number
     status?: number
