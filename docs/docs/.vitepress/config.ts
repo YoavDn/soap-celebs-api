@@ -25,7 +25,12 @@ export default {
                     { text: 'All Soap Celebs', link: '/endpoints/getAllCelebs' },
                     { text: 'Random Celeb', link: '/endpoints/randomCeleb' },
                     { text: 'By Gender', link: '/endpoints/byGender' }
-
+                ],
+            },
+            {
+                text: 'more',
+                items: [
+                    { text: "List of Celebs", link: '/endpoints/celebsList' }
                 ]
             }
         ],

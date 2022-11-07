@@ -31,7 +31,7 @@ this endpoint has two optional params
 | Param | Description |
 | :---- | :---------- |
 | gender  | getting the celebs by it's name |
-| limit | Limit the result a specific number of celebs
+| limit | Limit the result to a specific number of celebs
 
 
 Not adding the query params will result all soap celebs 
