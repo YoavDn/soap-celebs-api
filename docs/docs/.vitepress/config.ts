@@ -1,8 +1,9 @@
 export default {
     title: 'SOAP CELEBS',
     description: 'Just playing around.',
-    logo: '/logo.svg',
+    head: [['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]],
     themeConfig: {
+        logo: { dark: '/icon.svg', light: '/icon.svg' },
         nav: [
             { text: 'Docs', link: '/endpoints/getAllCelebs' },
             { text: 'Support Us', link: '/supportUs' },
