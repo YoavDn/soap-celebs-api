@@ -1,14 +1,13 @@
 # Celebs list
 
 
-
 <script setup>
     import { ref } from 'vue'
     let celebs = ref(null)
     const currentCeleb = ref(null)
 
     const init =  () => {
-        fetch('http://localhost:8080/api/celeb/list')
+        fetch('https://soapcelebsapi.onrender.com/api/celeb/list')
         .then((r) => r.json())
         .then((r) => {
             celebs.value = r
@@ -19,7 +18,7 @@
     init()
 
     function loadSoap( name ) {
-        fetch(`http://localhost:8080/api/celeb?name=${name}`)
+        fetch(`https://soapcelebsapi.onrender.com/api/celeb?name=${name}`)
         .then((r) => r.json())
         .then((r) => currentCeleb.value = r)
     }
@@ -31,7 +30,7 @@
 
 <br>
 <div>
-<label for=selectTag>https://soapcelebsapi.com/api/celeb?name=</label>
+<label for=selectTag>https://soapcelebsapi.onrender.com/api/celeb?name=</label>
 <select name="selectTag" @change="changeSoap">
 <option v-for="celeb in celebs"
  :value='celeb'

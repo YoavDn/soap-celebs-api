@@ -1,12 +1,12 @@
 # Random Celeb
-`https://soapcelebsapi.com/api/celeb/random`
+`https://soapcelebsapi.onrender.com/api/celeb/random`
 
 <script setup>
     import { ref } from 'vue'
     const randomSoapCeleb = ref(null)
 
     function loadRandomSoap() {
-        fetch('http://localhost:8080/api/celeb/random')
+        fetch('https://soapcelebsapi.onrender.com/api/celeb/random')
         .then((r) => r.json())
         .then((r) => randomSoapCeleb.value = r)
     }
