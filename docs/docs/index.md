@@ -5,7 +5,7 @@ layout: home
 hero:
   name: Soap Celebs API
   text: The API you didn't know you needed.
-  tagline: The best way to render stupid shit fast
+  tagline: The best way to render Soap Celebs on your site 
   image:
     src: /logo.png
     alt: soap Celebs

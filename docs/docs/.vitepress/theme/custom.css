@@ -49,3 +49,26 @@
 }
 
 
+.buy-coffee-btn {
+    font-weight: 700;
+    border: solid 2px var(--vp-c-text-1);
+    border-radius: .4rem;
+    padding: .3em 1em ;
+}
+
+.buy-coffee-btn:hover {
+    color: var(--vp-c-bg) !important;
+    background-color: var(--vp-c-text-1);
+}
+select {
+    cursor: pointer;
+    padding:.5rem .2rem  ;
+    text-align: center;
+    border-radius: 4px;
+    border: solid 1px var(--vp-c-brand);
+    transition: all .3s ease;
+}
+
+select:hover {
+    border: solid 1px var(--vp-c-brand-dark);
+}
