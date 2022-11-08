@@ -1,8 +1,8 @@
 # By Gender
-`https://soap-celebs.com/api/celebs/${gender}`
+`https://soapcelebsapi.com/api/celeb/${gender}`
 This will return an array of all the soap celebs with the desire gender. You can choose the number of celebs with the `limit` param.
 
-for example: `https://soap-celebs.com/api/celebs/female?limit=3` will return an list of three female soap celebs
+For example: `https://soapcelebsapi.com/api/celeb/female?limit=3` will return an list of three female soap celebs
 
 ### json 
 ``` json 
@@ -38,4 +38,4 @@ for example: `https://soap-celebs.com/api/celebs/female?limit=3` will return an 
 | limit | Limit the result to a specific number of celebs
 
 
-Not adding the query params will result all soap celebs 
+Not adding the query params will result all soap celebs with the target gender

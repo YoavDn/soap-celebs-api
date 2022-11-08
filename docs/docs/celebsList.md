@@ -8,7 +8,7 @@
     const currentCeleb = ref(null)
 
     const init =  () => {
-        fetch('http://localhost:8080/api/celebs/list')
+        fetch('http://localhost:8080/api/celeb/list')
         .then((r) => r.json())
         .then((r) => {
             celebs.value = r
@@ -19,7 +19,7 @@
     init()
 
     function loadSoap( name ) {
-        fetch(`http://localhost:8080/api/celebs?name=${name}`)
+        fetch(`http://localhost:8080/api/celeb?name=${name}`)
         .then((r) => r.json())
         .then((r) => currentCeleb.value = r)
     }
@@ -31,7 +31,7 @@
 
 <br>
 <div>
-<label for=selectTag>https://soap-celebs.com.api/celebs?name=</label>
+<label for=selectTag>https://soapcelebsapi.com/api/celeb?name=</label>
 <select name="selectTag" @change="changeSoap">
 <option v-for="celeb in celebs"
  :value='celeb'

@@ -2,7 +2,7 @@
 
 
 ## All Celebs
-`https://soap-selebs.com/api/celebs`
+`https://soap-selebs.com/api/celeb`
 
 result 
 

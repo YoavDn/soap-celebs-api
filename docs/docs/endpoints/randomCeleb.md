@@ -1,12 +1,12 @@
 # Random Celeb
-`https://soap-celebs.com/api/celebs/random`
+`https://soapcelebsapi.com/api/celeb/random`
 
 <script setup>
     import { ref } from 'vue'
     const randomSoapCeleb = ref(null)
 
     function loadRandomSoap() {
-        fetch('http://localhost:8080/api/celebs/random')
+        fetch('http://localhost:8080/api/celeb/random')
         .then((r) => r.json())
         .then((r) => randomSoapCeleb.value = r)
     }
@@ -24,9 +24,7 @@
 
 
 ## Query params 
-
 this endpoint has two optional params 
-
 
 | Param | Description |
 | :---- | :---------- |

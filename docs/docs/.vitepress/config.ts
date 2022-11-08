@@ -20,6 +20,11 @@ export default {
         ],
         sidebar: [
             {
+                items: [
+                    { text: "Intruduction", link: '/introduction' },
+                ]
+            },
+            {
                 text: 'Endpoints',
                 items: [
                     { text: 'All Soap Celebs', link: '/endpoints/getAllCelebs' },
@@ -31,7 +36,8 @@ export default {
                 text: 'More',
                 items: [
                     { text: "List of Celebs", link: '/celebsList' },
-                    { text: 'Buy me Soap', link: '/supportUs' },
+                    { text: 'About', link: '/about' },
+                    { text: 'Support Us', link: '/supportUs' },
                 ]
             },
         ],
