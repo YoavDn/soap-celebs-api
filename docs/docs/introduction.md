@@ -7,7 +7,7 @@ The base url contains information about all available API's resources. All reque
 
 
 ```  
-GET  https://soapcelebsapi.com/api
+GET  https://soapcelebsapi.onrender.com/api/
 ```
 
 ``` json 

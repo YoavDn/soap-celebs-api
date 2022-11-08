@@ -11,4 +11,4 @@ We are not getting any money from this and we use our free time to keep the API 
 Thanks!
 
 
-<a class=buy-coffee-btn href="https://www.buymeacoffee.com/yoavdanma">Buy me a Coffee</a>
+<a class=buy-coffee-btn href="https://www.buymeacoffee.com/yoavdanma">Buy me a Coffee  :coffee: </a> 

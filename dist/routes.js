@@ -10,9 +10,11 @@ const router = express_1.default.Router();
 //base url 
 router.get('/', (req, res) => {
     return res.json({
-        "celebs": 'https://soapcelebsapi.com/api/celebs',
-        "randomCeleb": 'https://soapcelebsapi.com/api/celebs/random',
-        "celebsList": 'https://soapcelebsapi.com/api/celebs/list'
+        "celebs": "https://soapcelebsapi.onrender.com/api/celeb",
+        "randomCeleb": "https://soapcelebsapi.onrender.com/api/celeb/random",
+        "maleCeleb": "https://soapcelebsapi.onrender.com/api/celeb/male",
+        "femaleCeleb": "https://soapcelebsapi.onrender.com/api/celeb/female",
+        "celebsList": "https://soapcelebsapi.onrender.com/api/celeb/list"
     });
 });
 //celebs req
