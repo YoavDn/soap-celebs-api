@@ -21,34 +21,14 @@ export async function getRandomCeleb(req: Request, res: Response) {
     }
 }
 
-// export async function queryMaleCelebs(req: Request, res: Response) {
-//     try {
-//         const celebs = await soapCelebsService.queryMaleCelebs(req.query)
-
-//         return res.send(celebs)
-//     } catch (err) {
-//         res.status(400)
-//         res.json(err)
-//     }
-// }
-
-// export async function queryFemaleCelebs(req: Request, res: Response) {
-//     try {
-//         const celebs = await soapCelebsService.queryFemaleCelebs(req.query)
-//         return res.send(celebs)
-//     } catch (err) {
-//         res.status(400)
-//         res.json(err)
-//     }
-// }
-
 export async function queryByGender(req: Request, res: Response) {
     try {
         const { gender } = req.params
         if (gender !== 'male' && gender !== 'female') {
-            return res.status(404).json({
-                massage: 'There is nothing here..  check if there\'s a typo.  see all endpoints at https://soapcelebsapi.onrender.com/api/'
-            })
+            return res.status(404)
+                .json({
+                    massage: 'There is nothing here..  check if there\'s a typo.  see all endpoints at https://soapcelebsapi.onrender.com/api/'
+                })
         }
         const celebs = await soapCelebsService.queryByGender(gender as "male" | 'female', req.query)
         return res.send(celebs)
