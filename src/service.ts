@@ -52,6 +52,19 @@ async function queryFemaleCelebs(query: IQuery) {
     }
 }
 
+async function queryByGender(gender: 'male' | 'female', query: IQuery) {
+    try {
+        const { limit } = query
+        const res = limit
+            ? await SoapCeleb.find({ gender: gender }).limit(Number(limit))
+            : await SoapCeleb.find({ gender: gender })
+        return res
+
+    } catch (err) {
+        return console.log(err)
+    }
+}
+
 
 async function getRandom(query: IQuery) {
     try {
@@ -102,7 +115,6 @@ export const soapCelebsService = {
     getRandom,
     addSoapCeleb,
     queryCelebs,
-    queryMaleCelebs,
-    queryFemaleCelebs,
+    queryByGender,
     getCelebList
 }

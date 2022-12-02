@@ -20,7 +20,6 @@ mongoose.connect(config.dbUrl)
     .catch((err) => console.log('failed to connect', err))
 
 app.use('/api/', routes)
-
 app.use(errors.notFound)
 
 app.listen(port, () => {
