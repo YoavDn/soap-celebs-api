@@ -17,8 +17,8 @@ router.get('/', (req, res) => {
 //celebs req
 router.get('/celeb', queryCelebs)
 router.get('/celeb/random', getRandomCeleb)
-router.get('/celeb/:gender', queryByGender)
 router.get('/celeb/list', getCelebList)
+router.get('/celeb/:gender', queryByGender)
 
 // adding celeb (only in development)
 router.post('/add', auth.isDev, _addCeleb)
