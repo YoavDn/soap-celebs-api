@@ -1,12 +1,12 @@
 # Get all celebs
 
-
 ## All Celebs
-`https://soapcelebsapi.onrender.com/api/celeb`
 
-result 
+`https://soap-celebs-api-production.up.railway.app/api/celeb`
 
-``` json
+result
+
+```json
 [
   {
     "_id": "63643f8803f788de9486ded2",
@@ -27,16 +27,13 @@ result
 
 ```
 
+## Quering Celebs
 
-## Quering Celebs 
+quering the celebs has two optional params
 
-quering the celebs has two optional params 
+| Param | Description                                  |
+| :---- | :------------------------------------------- |
+| name  | getting the celebs by it's name              |
+| limit | Limit the result a specific number of celebs |
 
-
-| Param | Description |
-| :---- | :---------- |
-| name  | getting the celebs by it's name |
-| limit | Limit the result a specific number of celebs
-
-
-Not adding the query params will result all soap celebs 
+Not adding the query params will result all soap celebs
